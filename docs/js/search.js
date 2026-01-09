@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof PAGES === "undefined") return;
+  if (typeof PAGES === "undefined") {
+    console.warn("PAGES not loaded");
+    return;
+  }
 
   const input = document.getElementById("search");
   if (!input) return;
