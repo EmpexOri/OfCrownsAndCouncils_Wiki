@@ -1,22 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof PAGES === "undefined") {
-    console.warn("PAGES not loaded");
-    return;
-  }
+  if (typeof PAGES === "undefined") return;
 
   const input = document.getElementById("search");
-  if (!input) return;
+  const results = document.getElementById("search-results");
+  if (!input || !results) return;
 
   input.addEventListener("input", () => {
-    const q = input.value.toLowerCase();
-    if (!q) return;
+    const q = input.value.toLowerCase().trim();
+    results.innerHTML = "";
 
-    const match = PAGES.find(p =>
-      p.title.toLowerCase().includes(q)
-    );
+    if (!q) {
+      results.style.display = "none";
+      return;
+    }
 
-    if (match) {
-      window.location.href = match.url;
+    const matches = PAGES
+      .filter(p => p.title.toLowerCase().includes(q))
+      .slice(0, 8);
+
+    if (!matches.length) {
+      results.style.display = "none";
+      return;
+    }
+
+    matches.forEach(p => {
+      const li = document.createElement("li");
+      li.textContent = p.title;
+      li.onclick = () => window.location.href = p.url;
+      results.appendChild(li);
+    });
+
+    results.style.display = "block";
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const first = results.querySelector("li");
+      if (first) first.click();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-container")) {
+      results.style.display = "none";
     }
   });
 });
