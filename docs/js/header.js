@@ -20,5 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
+  // 3️⃣ Prepend to body
   document.body.prepend(header);
+
 });
