@@ -1,130 +1,69 @@
-:root {
---bg: #f8f9fa;
---panel: #ffffff;
---border: #d0d7de;
---text: #1f2328;
---link: #0969da;
-}
-
-
-body {
-margin: 0;
-font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-background: var(--bg);
-color: var(--text);
-}
-
-
-.wiki-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0.75rem 1.25rem;
-background: var(--panel);
-border-bottom: 1px solid var(--border);
-}
-
-
-.logo {
-font-weight: bold;
-font-size: 1.1rem;
-}
-
-
-#search {
-padding: 0.4rem 0.6rem;
-width: 220px;
-}
-
-
-.wiki-layout {
-display: grid;
-grid-template-columns: 240px 1fr;
-min-height: calc(100vh - 60px);
-}
-
-
-.sidebar {
-background: var(--panel);
-border-right: 1px solid var(--border);
-padding: 1rem;
-}
-
-
-.sidebar h3 {
-margin-top: 0;
-}
-
-
-.sidebar ul {
-list-style: none;
-padding: 0;
-}
-
-
-.sidebar li {
-margin-bottom: 0.4rem;
-}
-
-
-.sidebar a {
-text-decoration: none;
-color: var(--link);
-}
-
-
-.content {
-padding: 1.5rem;
-max-width: 960px;
-}
-
-
-.wiki-footer {
-text-align: center;
-padding: 0.75rem;
-font-size: 0.85rem;
-border-top: 1px solid var(--border);
-background: var(--panel);
-}
-
-/* Make the search container relative for positioning the dropdown */
+/* header + search */
 .search-container {
   position: relative;
-  display: inline-block; /* keeps input inline if needed */
+  display: inline-block;
 }
 
-/* Dropdown box styling */
 .search-results {
   position: absolute;
-  top: 100%; /* right below the input */
+  top: 100%;
   left: 0;
-  width: 300px; /* fixed width for the box */
+  width: 300px;
   background: white;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   list-style: none;
-  margin: 4px 0 0 0; /* small spacing below input */
+  margin: 4px 0 0 0;
   padding: 0;
   max-height: 280px;
   overflow-y: auto;
-  display: none; /* hidden by default */
-  z-index: 1000; /* float above other content */
+  display: none;
+  z-index: 1000;
 }
 
-/* Each item in the dropdown */
 .search-results li {
   padding: 0.5rem 0.8rem;
   cursor: pointer;
   font-size: 0.95rem;
 }
 
-/* Hover highlight */
 .search-results li:hover {
   background-color: #eef3f8;
 }
 
-/* Optional: input focus shows border */
-#search:focus {
-  outline: 2px solid #0077cc;
+/* Category sections */
+.category-section {
+  margin: 2rem 0;
+}
+
+.category-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.category-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.category-scroll::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.category-page-link {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  background: #f4f4f4;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.category-page-link:hover {
+  background: #e0e7ff;
+  color: #000;
 }
