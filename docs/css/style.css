@@ -86,3 +86,45 @@ font-size: 0.85rem;
 border-top: 1px solid var(--border);
 background: var(--panel);
 }
+
+/* Make the search container relative for positioning the dropdown */
+.search-container {
+  position: relative;
+  display: inline-block; /* keeps input inline if needed */
+}
+
+/* Dropdown box styling */
+.search-results {
+  position: absolute;
+  top: 100%; /* right below the input */
+  left: 0;
+  width: 300px; /* fixed width for the box */
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  list-style: none;
+  margin: 4px 0 0 0; /* small spacing below input */
+  padding: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  display: none; /* hidden by default */
+  z-index: 1000; /* float above other content */
+}
+
+/* Each item in the dropdown */
+.search-results li {
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* Hover highlight */
+.search-results li:hover {
+  background-color: #eef3f8;
+}
+
+/* Optional: input focus shows border */
+#search:focus {
+  outline: 2px solid #0077cc;
+}
