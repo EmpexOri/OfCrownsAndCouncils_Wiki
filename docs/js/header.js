@@ -1,15 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.createElement("header");
-  header.className = "wiki-header";
+  if (typeof PAGES === "undefined") {
+    console.warn("PAGES not loaded");
+    return;
+  }
 
-  header.innerHTML = `
-    <div class="logo">
-      <a href="/OfCrownsAndCouncils_Wiki/index.html">
-        Of Crowns and Councils
-      </a>
-    </div>
-    <input id="search" type="search" placeholder="Search the wiki…" />
-  `;
+  const input = document.getElementById("search");
+  if (!input) {
+    console.warn("Search input not found");
+    return;
+  }
 
-  document.body.prepend(header);
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase().trim();
+    if (!q) return;
+
+    const match = PAGES.find(p =>
+      p.title.toLowerCase().includes(q)
+    );
+
+    if (match) {
+      window.location.href = match.url;
+    }
+  });
 });
