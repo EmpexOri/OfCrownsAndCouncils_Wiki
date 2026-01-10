@@ -257,35 +257,47 @@ body {
 .infobox {
   border: 1px solid var(--border);
   background: var(--panel);
-  padding: 0.75rem;
   font-size: 0.9rem;
+  width: 100%;
 }
 
+/* Title bar */
 .infobox-title {
   text-align: center;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
+  padding: 0.5rem;
   font-size: 1.05rem;
+  font-weight: 600;
+  background: #f1f3f5;
+  border-bottom: 1px solid var(--border);
 }
 
+/* Image */
 .infobox img {
   width: 100%;
   display: block;
-  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
+/* Table layout */
 .infobox table {
   width: 100%;
   border-collapse: collapse;
 }
 
+/* Header cells */
 .infobox th {
   text-align: left;
   vertical-align: top;
-  padding: 0.3rem;
-  width: 45%;
+  padding: 0.4rem 0.5rem;
+  width: 40%;
   font-weight: 600;
+  border-top: 1px solid var(--border);
+  background: #fafbfc;
 }
 
+/* Data cells */
 .infobox td {
-  padding: 0.3rem;
+  padding: 0.4rem 0.5rem;
+  border-top: 1px solid var(--border);
 }
