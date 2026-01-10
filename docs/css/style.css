@@ -65,6 +65,7 @@ body {
 .content {
   padding: 1.5rem;
   max-width: 960px;
+  margin: 0 auto;
 }
 
 .wiki-footer {
