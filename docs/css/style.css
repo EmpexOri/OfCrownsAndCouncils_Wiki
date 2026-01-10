@@ -164,3 +164,62 @@ body {
   background: #e0e7ff;
   color: #000;
 }
+
+/* =========================
+   Wiki Section Layout
+   ========================= */
+.wiki-section {
+  margin: 2.5rem 0;
+}
+
+.section-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.section-text h2,
+.section-text h3 {
+  margin-top: 0;
+}
+
+/* =========================
+   Carousel
+   ========================= */
+.carousel {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.carousel img {
+  width: 100%;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.carousel .prev {
+  left: 5px;
+}
+
+.carousel .next {
+  right: 5px;
+}
