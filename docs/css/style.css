@@ -223,3 +223,16 @@ body {
 .carousel .next {
   right: 5px;
 }
+
+/* =========================
+   Section Dividers
+   ========================= */
+.wiki-section {
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.wiki-section:last-of-type {
+  border-bottom: none;
+}
